@@ -233,24 +233,36 @@
                 <span class="text-white font-semibold">Afternic &bull; Sedo &bull; Atom &bull; Dynadot &bull; Namecheap &bull; GoDaddy</span></p>
             </div>
 
-            <!-- Formspree Contact Form -->
-            <form action="https://formspree.io/f/mgavrwee" method="POST" class="w-full space-y-3">
+            <!-- Formspree Success & Error Messages -->
+            <!-- These are automatically managed by the Formspree AJAX SDK -->
+            <div data-fs-success class="p-4 mb-6 rounded-xl bg-emerald-900/20 border border-emerald-500/30 text-center text-emerald-400 text-sm font-bold shadow-inner" style="display: none;">
+                <i class="fa-solid fa-circle-check text-2xl mb-2 block"></i>
+                Offer securely submitted! Our team will contact you shortly.
+            </div>
+            
+            <div data-fs-error class="p-4 mb-4 rounded-xl bg-red-900/20 border border-red-500/30 text-center text-red-400 text-sm font-bold shadow-inner" style="display: none;">
+                An error occurred. Please check your inputs and try again.
+            </div>
+
+            <!-- Formspree Contact Form (AJAX Integrated) -->
+            <form id="acquisition-form" class="w-full space-y-3">
                 <!-- Hidden input to capture the specific domain being acquired -->
-                <input type="hidden" name="domain_name" id="modal-domain-input" value="">
+                <input type="hidden" name="domain_name" id="modal-domain-input" value="" data-fs-field>
                 
-                <div><input type="text" name="name" placeholder="Full Name" required class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:border-blue-500 outline-none"></div>
-                <div><input type="text" name="company" placeholder="Company Name" class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:border-blue-500 outline-none"></div>
-                <div><input type="email" name="email" placeholder="Official Email" required class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:border-blue-500 outline-none"></div>
-                <div><input type="tel" name="whatsapp" placeholder="Phone / WhatsApp Number" required class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:border-blue-500 outline-none"></div>
-                <div><input type="url" name="linkedin_website" placeholder="LinkedIn Profile / Website (Optional)" class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:border-blue-500 outline-none"></div>
+                <div><input type="text" name="name" placeholder="Full Name" required class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:border-blue-500 outline-none" data-fs-field></div>
+                <div><input type="text" name="company" placeholder="Company Name" class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:border-blue-500 outline-none" data-fs-field></div>
+                <div><input type="email" name="email" placeholder="Official Email" required class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:border-blue-500 outline-none" data-fs-field></div>
+                <div><input type="tel" name="whatsapp" placeholder="Phone / WhatsApp Number" required class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:border-blue-500 outline-none" data-fs-field></div>
+                <div><input type="url" name="linkedin_website" placeholder="LinkedIn Profile / Website (Optional)" class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:border-blue-500 outline-none" data-fs-field></div>
                 
                 <!-- Offer Amount with Min Value constraint -->
                 <div class="relative">
                     <span class="absolute left-3 top-2.5 text-slate-500 font-bold">$</span>
-                    <input type="number" name="offer_amount" placeholder="Offer Amount (USD)" min="59" required class="w-full bg-slate-900/50 border border-slate-700 rounded-lg pl-7 pr-4 py-2.5 text-sm text-white focus:border-blue-500 outline-none">
+                    <input type="number" name="offer_amount" placeholder="Offer Amount (USD)" min="59" required class="w-full bg-slate-900/50 border border-slate-700 rounded-lg pl-7 pr-4 py-2.5 text-sm text-white focus:border-blue-500 outline-none" data-fs-field>
                 </div>
                 
-                <button type="submit" class="btn-neon w-full text-white font-bold py-3 px-6 rounded-xl transition-transform hover:scale-105 text-sm flex justify-center items-center gap-2 mt-2">
+                <!-- Submit Button disables automatically during AJAX call -->
+                <button type="submit" data-fs-submit-btn class="btn-neon w-full text-white font-bold py-3 px-6 rounded-xl transition-transform hover:scale-105 text-sm flex justify-center items-center gap-2 mt-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100">
                     <i class="fa-solid fa-paper-plane text-lg"></i> Submit Official Offer
                 </button>
             </form>
@@ -677,5 +689,16 @@
         // Re-initialize canvas on window resize to prevent layout bugs
         window.addEventListener('resize', initCanvas);
     </script>
+    
+    <!-- ========================================== -->
+    <!-- FORMSPREE AJAX INTEGRATION                 -->
+    <!-- ========================================== -->
+    <script>
+        // Initialize Formspree AJAX SDK to handle submissions without reloading the page
+        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+        formspree('initForm', { formElement: '#acquisition-form', formId: 'mgavrwee' });
+    </script>
+    <!-- Load Formspree AJAX Library via CDN -->
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
