@@ -421,69 +421,93 @@
 
         // --- 2. THE REAL DOMAIN DATA ARRAY ---
         // ==========================================
-        // 💡 [HOW TO ADD A NEW DOMAIN MANUALLY] 💡
-        // 1. Go to the correct extension section below (e.g., // --- .me Domains ---).
-        // 2. Copy an existing line, for example: { name: 'example.me', price: 99, ext: 'me', category: 'Premium', icon: 'fa-globe' },
-        // 3. Paste it on a new line and change 'example.me' to your new domain, and '99' to your new price.
-        // 4. Save the file. The website's JS Engine will automatically create the card and add it to the correct filter tab!
+        // 💡 [طريقة إضافة دومين جديد يدوياً في المستقبل] 💡
+        // 1. اذهب للقسم الخاص بامتداد الدومين (مثلاً // --- .me Domains ---).
+        // 2. انسخ سطر من السطور الموجودة بالفعل، مثلاً:
+        //    { name: 'example.me', price: 99, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+        // 3. الصق السطر في سطر جديد، وغير 'example.me' لاسم دومينك الجديد، والـ '99' لسعره.
+        // 4. احفظ الملف، والموقع هيتكفل بالباقي (هيبني الكارت، ويحطه في الفلتر الصح، ويشغله في الشريط اللانهائي)!
         // ==========================================
 
         const domains = [
             // --- .me Domains ---
             { name: '1cv.me', price: 399, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
-            { name: 'bmverify.me', price: 9999, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
-            { name: 'verifybm.me', price: 9999, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
-            { name: 'hoz.me', price: 1699, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
-            { name: 'azi.me', price: 1999, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
-            { name: 'rlx.me', price: 1399, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
             { name: 'anw.me', price: 1399, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
-            { name: 'mydev.me', price: 4444, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
-            { name: 'HDW.me', price: 1399, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
-            { name: 'UEL.me', price: 1399, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
-            { name: 'Yir.me', price: 399, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
-            { name: 'Rul.me', price: 1399, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
-            { name: 'wassl.me', price: 99, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'AskSi.me', price: 2500, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'autoreply.me', price: 399, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'azi.me', price: 1999, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'bmverify.me', price: 9999, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'CGY.me', price: 1418, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'ChatAgi.me', price: 2999, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'Chatsi.me', price: 2999, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'Ckt.me', price: 1619, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'flt.me', price: 1888, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'gathern.me', price: 99, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'generatefor.me', price: 399, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
             { name: 'getcrypto.me', price: 599, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
             { name: 'getlabs.me', price: 399, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
-            { name: 'verifywith.me', price: 4599, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'getsi.me', price: 999, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'HDW.me', price: 1599, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'hisi.me', price: 2322, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'hoz.me', price: 1699, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
             { name: 'maktabati.me', price: 399, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
-            { name: 'raselbot.me', price: 399, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
-            { name: 'pitchavatar.me', price: 99, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
             { name: 'mottasl.me', price: 99, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
-            { name: 'generatefor.me', price: 399, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
-            { name: 'gathern.me', price: 99, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
-            { name: 'autoreply.me', price: 399, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'mydev.me', price: 4444, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'mydomains.me', price: 9999, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'pitchavatar.me', price: 99, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'raselbot.me', price: 399, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'rlx.me', price: 1399, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'Rul.me', price: 1399, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'UEL.ME', price: 1399, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'uyu.me', price: 1799, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'verifybm.me', price: 9999, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'verifywith.me', price: 9599, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'wassl.me', price: 99, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
+            { name: 'Yir.me', price: 399, ext: 'me', category: 'Premium Asset', icon: 'fa-globe' },
 
             // --- .tech Domains ---
-            { name: 'Dest.tech', price: 555, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
-            { name: 'Frak.tech', price: 699, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
-            { name: 'HiPay.tech', price: 555, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
-            { name: 'Gole.tech', price: 499, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
-            { name: 'igov.tech', price: 333, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
-            { name: 'Nezam.tech', price: 119, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
-            { name: 'ILUV.tech', price: 999, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
-            { name: 'Bluelime.tech', price: 499, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
-            { name: 'yato.tech', price: 219, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
-            { name: 'Lomi.tech', price: 450, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
-            { name: 'pige.tech', price: 269, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
-            { name: 'Tosi.tech', price: 229, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
-            { name: 'kohi.tech', price: 111, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
+            { name: 'afib.tech', price: 555, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
+            { name: 'amep.tech', price: 199, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
             { name: 'BlockHub.tech', price: 222, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
+            { name: 'Bluelime.tech', price: 499, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
+            { name: 'buildsi.tech', price: 99, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
+            { name: 'Dest.tech', price: 555, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
+            { name: 'empa.tech', price: 132, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
+            { name: 'Frak.tech', price: 699, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
+            { name: 'Gole.tech', price: 499, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
+            { name: 'HiPay.tech', price: 555, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
+            { name: 'ibro.tech', price: 139, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
             { name: 'idHub.tech', price: 222, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
+            { name: 'igov.tech', price: 333, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
+            { name: 'iksa.tech', price: 99, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
+            { name: 'ILUV.tech', price: 999, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
+            { name: 'imca.tech', price: 499, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
+            { name: 'kohi.tech', price: 111, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
+            { name: 'Lomi.tech', price: 450, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
+            { name: 'modl.tech', price: 1222, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
+            { name: 'Nezam.tech', price: 319, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
+            { name: 'olsi.tech', price: 1277, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
+            { name: 'pige.tech', price: 269, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
+            { name: 'smat.tech', price: 495, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
+            { name: 'Tosi.tech', price: 229, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
+            { name: 'USUS.tech', price: 450, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
+            { name: 'WeCom.tech', price: 699, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
+            { name: 'yato.tech', price: 219, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
             { name: 'zano.tech', price: 355, ext: 'tech', category: 'Tech Brand', icon: 'fa-microchip' },
 
             // --- .app Domains ---
-            { name: 'Zakaa.app', price: 499, ext: 'app', category: 'SaaS / App', icon: 'fa-mobile-screen' },
-            { name: 'rasidy.app', price: 295, ext: 'app', category: 'SaaS / App', icon: 'fa-mobile-screen' },
-            { name: 'isalam.app', price: 199, ext: 'app', category: 'SaaS / App', icon: 'fa-mobile-screen' },
             { name: 'fawaran.app', price: 99, ext: 'app', category: 'SaaS / App', icon: 'fa-mobile-screen' },
             { name: 'huri.app', price: 999, ext: 'app', category: 'SaaS / App', icon: 'fa-mobile-screen' },
+            { name: 'isalam.app', price: 199, ext: 'app', category: 'SaaS / App', icon: 'fa-mobile-screen' },
+            { name: 'lawz.app', price: 455, ext: 'app', category: 'SaaS / App', icon: 'fa-mobile-screen' },
+            { name: 'rasidy.app', price: 295, ext: 'app', category: 'SaaS / App', icon: 'fa-mobile-screen' },
+            { name: 'Zakaa.app', price: 799, ext: 'app', category: 'SaaS / App', icon: 'fa-mobile-screen' },
 
             // --- .dev Domains ---
-            { name: 'aibank.dev', price: 372, ext: 'dev', category: 'Development', icon: 'fa-code' },
-            { name: 'zakaa.dev', price: 499, ext: 'dev', category: 'Development', icon: 'fa-code' },
-            { name: 'expressai.dev', price: 499, ext: 'dev', category: 'Development', icon: 'fa-code' },
-            { name: 'mycrate.dev', price: 799, ext: 'dev', category: 'Development', icon: 'fa-code' }
+            { name: 'aibank.dev', price: 572, ext: 'dev', category: 'Development', icon: 'fa-code' },
+            { name: 'expressai.dev', price: 599, ext: 'dev', category: 'Development', icon: 'fa-code' },
+            { name: 'mycrate.dev', price: 699, ext: 'dev', category: 'Development', icon: 'fa-code' },
+            { name: 'zakaa.dev', price: 699, ext: 'dev', category: 'Development', icon: 'fa-code' }
         ];
 
         // --- 3. INFINITE TICKER LOGIC ---
